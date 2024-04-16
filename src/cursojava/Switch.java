@@ -33,6 +33,7 @@ public class Switch {
                        res = lado*lado;
                         System.out.println("\nEl area del cuadrado es de: " + res + "cm."); 
                     }
+                    break;
                 }
                 case 2 -> {
                     int ancho = Integer.parseInt(JOptionPane.showInputDialog("Introduzca el ancho del rectangulo en CM"));
@@ -45,6 +46,7 @@ public class Switch {
                         res = ancho*alto;
                         System.out.println("\nEl area del rectangulo es de: " + res + "cm.");
                     }
+                    break;
                 }
                 case 3 -> {
                     double radio = Double.parseDouble(JOptionPane.showInputDialog("Introduzca el radio del circulo en CM"));
@@ -56,6 +58,7 @@ public class Switch {
                         res = Math.PI * Math.pow(radio, 2);
                         System.out.println("\nEl area del circulo es de: " + res + "cm.");
                     }
+                    break;
                 }
                 case 4 ->{
                     int base = Integer.parseInt(JOptionPane.showInputDialog("Introduzca el ancho del rectangulo en CM"));
@@ -68,6 +71,7 @@ public class Switch {
                         res = (base*altura)/2;
                         System.out.println("\nEl area del triangulo es de: " + res + "cm.");
                     }
+                    break;
                 }
             }
         }
