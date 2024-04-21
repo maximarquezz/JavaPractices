@@ -4,7 +4,8 @@ public class UsoVehiculo {
     
     public static void main(String args[]){
         
-        //Auto Renault = new Auto();
+        Furgoneta ford = new Furgoneta("rojo", true, false, 2, 250);
+        System.out.println(ford.getRuedas());
         
     }
     
