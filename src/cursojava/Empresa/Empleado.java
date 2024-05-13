@@ -2,27 +2,21 @@ package cursojava.Empresa;
 
 import java.time.LocalDate;
 
-public class Empleado {
+public class Empleado extends Persona implements Comparable, iEmpleados{
     
     //VARIABLES
-    private String nombre;
     private int sueldo;
     private LocalDate fechaAlta;
-    private int id;
 
     //CONSTRUCTORES
     public Empleado(String nombre, int sueldo, int año, int mes, int dia){
-        this.nombre = nombre;
+        super(nombre);
         this.sueldo = sueldo;
         this.fechaAlta = LocalDate.of(año, mes, dia);
-        this.id = id_increment;
-        id_increment++;
     }
     
     public Empleado(String nombre){
         this(nombre, 30000, 2024, 04, 19);
-        this.id = id_increment;
-        id_increment++;
     }
 
     //MÉTODOS
@@ -31,39 +25,54 @@ public class Empleado {
     }
 
     //GETTERS
-    public int getID(){
-        return id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public int getSueldo() {
+    public int getSueldo(){
         return sueldo;
     }
 
-    public LocalDate getFechaAlta() {
+    public LocalDate getFechaAlta(){
         return fechaAlta;
     }
 
     //SETTERS
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setSueldo(int sueldo) {
+    public void setSueldo(int sueldo){
         this.sueldo = sueldo;
     }
 
-    public void setFechaAlta(int año, int mes, int dia) {
+    public void setFechaAlta(int año, int mes, int dia){
         this.fechaAlta = LocalDate.of(año, mes, dia);
     }
+
+    //ABSTRACT
+    @Override
+    public String getType() {
+        return "Soy un empleado";
+    }
     
-    //STATIC (variables, constantes o métodos)
-    private static int id_increment = 1;
-    public static int getId_increment(){
-        return id_increment;
+    //INTERFACES
+    @Override
+    public int compareTo(Object obj){
+        Empleado emp = (Empleado) obj;
+        
+        if(this.sueldo < emp.sueldo){
+            return -1;
+        }
+        else if(this.sueldo > emp.sueldo){
+            return +1;
+        }
+        else{
+            return 0;
+        }
+    }
+
+    @Override
+    public double establecerBonus(double bonus) {
+        if (bonus < iEmpleados.MIN_BONUS){
+            System.out.println("ERROR: el mínimo de bonus es: " + iEmpleados.MIN_BONUS);
+            return 0;
+        }
+        else{
+            return bonus;
+        }
     }
 
 }

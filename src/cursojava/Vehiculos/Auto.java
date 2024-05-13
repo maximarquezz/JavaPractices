@@ -26,6 +26,18 @@ public class Auto {
         this.asientosCuero = asientosCuero;
         this.climatizador = climatizador;
     }
+    
+    //MÉTODOS GENERALES
+    public String getInfo(){
+        return "Ruedas: " + ruedas + ".\n"
+                + "Largo: " + largo + " cm.\n"
+                + "Ancho: " + ancho + " cm.\n"
+                + "Motor: " + motor + " kg.\n"
+                + "Peso plataforma: " + peso_plataforma + " kg.\n"
+                + "Color: " + color + ".\n"
+                + "Asientos de cuero: " + asientosCuero + ".\n"
+                + "Climatizador: " + climatizador + ".\n";
+    }
 
     //GETTERS
     public int getRuedas() {
